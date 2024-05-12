@@ -95,16 +95,18 @@ while (i < 3) {
 
 let num;
 do {
-  num = prompt("Введите число больше 100?", 0);
+  num = +prompt("Введите число больше 100");
 } while (num <= 100 && num);
 
-let n = 10;
-prime: for (let i = 2; i <= n; i++) {
-  for (let j = 2; j < i; j++) {
-    if (i % j == 0) continue prime;
+let num = +prompt("До какого числа считаем?", 100);
+let res = [];
+main: for (let i = 1; i < num; i++) {
+  for (let a = 2; a < i; a++) {
+    if (i % a === 0) continue main;
   }
-  alert(i);
+  res.push(i);
 }
+alert(res);
 
 // -----------------------------------
 
