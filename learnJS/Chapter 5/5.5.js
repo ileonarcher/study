@@ -53,3 +53,40 @@ let usersMapped = users.map((item) => {
 function sortByAge(arr) {
   arr.sort((a, b) => a.age - b.age);
 }
+
+function shuffle(array) {
+  array.sort((a, b) => Math.random() - 0.5);
+}
+
+function getAverageAge(users) {
+  return users.reduce((acc, item, index, arr) => {
+    if (index == arr.length - 1) {
+      return (acc + item.age) / arr.length;
+    }
+    console.log((acc + item.age) / arr.length);
+    return acc + item.age;
+  }, 0);
+}
+
+function unique(arr) {
+  let res = [];
+  return arr.filter((item) => {
+    if (res.includes(item)) {
+      return false;
+    } else {
+      res.push(item);
+      return true;
+    }
+  });
+}
+
+function groupById(arr) {
+  return arr.reduce((acc, item) => {
+    acc[item.id] = {
+      id: item.id,
+      name: item.name,
+      age: item.age
+    };
+    return acc
+  }, {})
+}
