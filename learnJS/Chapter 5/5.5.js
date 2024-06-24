@@ -85,8 +85,8 @@ function groupById(arr) {
     acc[item.id] = {
       id: item.id,
       name: item.name,
-      age: item.age
+      age: item.age,
     };
-    return acc
-  }, {})
+    return acc;
+  }, {});
 }
